@@ -33,7 +33,7 @@ const nailProducts: Array<{
   },
   {
     type: 'Finishing Nail 2"' as NailType,
-    image: 'https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?w=400&h=300&fit=crop&crop=center',
+    image: 'https://raw.githubusercontent.com/Valcour1/nail-exchange-marketplace/main/public/finishing-nail.jpg',
     description: 'Small head nails for trim work and finishing touches',
     uses: ['Trim work', 'Molding', 'Cabinet installation'],
     trending: 'up'
