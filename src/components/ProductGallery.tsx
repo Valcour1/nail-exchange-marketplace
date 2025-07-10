@@ -47,7 +47,7 @@ const nailProducts: Array<{
   },
   {
     type: 'Framing Nail 3.25"' as NailType,
-    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=300&fit=crop&crop=center',
+    image: 'https://raw.githubusercontent.com/Valcour1/nail-exchange-marketplace/main/public/framing-nail.jpg',
     description: 'Heavy-duty framing nails for structural applications',
     uses: ['Structural framing', 'Heavy construction', 'Deck building'],
     trending: 'up'
