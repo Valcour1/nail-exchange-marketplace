@@ -54,7 +54,7 @@ const nailProducts: Array<{
   },
   {
     type: 'Brad Nail 1"' as NailType,
-    image: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=400&h=300&fit=crop&crop=center',
+    image: 'https://raw.githubusercontent.com/Valcour1/nail-exchange-marketplace/main/public/brad-nail.webp',
     description: 'Thin nails for delicate work and precision applications',
     uses: ['Fine woodworking', 'Picture frames', 'Delicate trim'],
     trending: 'stable'
