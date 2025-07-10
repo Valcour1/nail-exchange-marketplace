@@ -19,14 +19,14 @@ const nailProducts: Array<{
 }> = [
   {
     type: 'Common Nail 3.5"' as NailType,
-    image: '/nail-sizes.svg',
+    image: 'https://raw.githubusercontent.com/Valcour1/nail-exchange-marketplace/main/public/common-nail.jpg',
     description: 'Heavy-duty nails for general construction and framing work',
     uses: ['Framing', 'Construction', 'General building'],
     trending: 'up'
   },
   {
     type: 'Common Nail 2.5"' as NailType,
-    image: '/nail-sizes.svg',
+    image: 'https://raw.githubusercontent.com/Valcour1/nail-exchange-marketplace/main/public/common-nail.jpg',
     description: 'Medium-duty common nails for lighter construction work',
     uses: ['Light framing', 'Sheathing', 'General repairs'],
     trending: 'stable'
@@ -40,7 +40,7 @@ const nailProducts: Array<{
   },
   {
     type: 'Roofing Nail 1.25"' as NailType,
-    image: '/roofing-nail.svg',
+    image: 'https://raw.githubusercontent.com/Valcour1/nail-exchange-marketplace/main/public/roofing-nail.jpg',
     description: 'Galvanized nails with large heads for roofing applications',
     uses: ['Roofing', 'Shingles', 'Underlayment'],
     trending: 'down'
