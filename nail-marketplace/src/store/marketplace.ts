@@ -18,6 +18,8 @@ interface MarketplaceState {
   setSelectedNailType: (nailType: NailType) => void;
   placeOrder: (order: Omit<Order, 'id' | 'timestamp' | 'status'>) => void;
   cancelOrder: (orderId: string) => void;
+  initializeSampleData: () => void;
+  resetToSampleData: () => void;
   getOrderBook: (nailType: NailType) => OrderBook;
   getUserOrders: (userId: string) => Order[];
 }
@@ -112,7 +114,7 @@ export const useMarketplaceStore = create<MarketplaceState>()(
       // Initial state
       currentUser: null,
       users: [],
-      orders: sampleOrders,
+      orders: [],
       trades: [],
       selectedNailType: 'Common Nail 3.5"',
 
@@ -147,8 +149,30 @@ export const useMarketplaceStore = create<MarketplaceState>()(
         ),
       })),
 
+      initializeSampleData: () => set((state) => {
+        // Only add sample data if no orders exist
+        if (state.orders.length === 0) {
+          return { orders: sampleOrders };
+        }
+        return state;
+      }),
+
+      resetToSampleData: () => set(() => ({
+        currentUser: null,
+        users: [],
+        orders: sampleOrders,
+        trades: [],
+        selectedNailType: 'Common Nail 3.5"',
+      })),
+
       getOrderBook: (nailType) => {
         const state = get();
+
+        // Initialize sample data if no orders exist
+        if (state.orders.length === 0) {
+          set({ orders: sampleOrders });
+        }
+
         const activeOrders = state.orders.filter(
           order => order.nailType === nailType && order.status === 'active'
         );

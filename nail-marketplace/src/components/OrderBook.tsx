@@ -15,7 +15,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MarketDepthChart } from '@/components/MarketDepthChart';
 
 export function OrderBook() {
-  const { selectedNailType, getOrderBook } = useMarketplaceStore();
+  const { selectedNailType, getOrderBook, initializeSampleData } = useMarketplaceStore();
   const [mounted, setMounted] = useState(false);
   const orderBook = getOrderBook(selectedNailType);
 
@@ -28,7 +28,8 @@ export function OrderBook() {
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+    initializeSampleData();
+  }, [initializeSampleData]);
 
   return (
     <div className="space-y-4">

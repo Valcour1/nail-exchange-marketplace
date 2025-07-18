@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useMarketplaceStore } from '@/store/marketplace';
@@ -62,7 +62,12 @@ const nailProducts: Array<{
 ];
 
 export function ProductGallery() {
-  const { getOrderBook } = useMarketplaceStore();
+  const { getOrderBook, initializeSampleData, resetToSampleData } = useMarketplaceStore();
+
+  // Initialize sample data when component mounts
+  useEffect(() => {
+    initializeSampleData();
+  }, [initializeSampleData]);
 
   // Filter state
   const [filters, setFilters] = useState({
@@ -144,9 +149,15 @@ export function ProductGallery() {
         <p className="text-muted-foreground mb-4">
           Click on any product to view its live order book and place trades
         </p>
-        <div className="text-sm text-muted-foreground">
+        <div className="text-sm text-muted-foreground mb-4">
           • Real-time order matching • Professional trading interface • Secure transactions
         </div>
+        <button
+          onClick={resetToSampleData}
+          className="text-xs bg-blue-100 hover:bg-blue-200 text-blue-700 px-3 py-1 rounded transition-colors"
+        >
+          Load Demo Market Data
+        </button>
       </div>
 
       {/* Main Content with Sidebar */}
