@@ -1,5 +1,6 @@
 'use client';
 
+// Updated OrderBook component - Latest version without market depth tabs
 import { useState, useEffect } from 'react';
 import { useMarketplaceStore } from '@/store/marketplace';
 import {
